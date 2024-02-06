@@ -10,11 +10,13 @@ def all_thing_is_obj(object = None) -> int:
 				break
 			i += 1
 
-		if i == len(types) or object == None:
+		if i == 4:
+			type_str = object + ' is in the kitchen'
+		elif i == len(types) or object == None:
 			type_str = 'none'
 		else:
 			type_str = str(types[i])
 			type_str = type_str[type_str.find('\'') + 1:type_str.rfind('\'')]
 
-		print(f'The object is of type {type_str}')
+		print(f'{type_str.capitalize()} : {types[i]}')
 	return 42
