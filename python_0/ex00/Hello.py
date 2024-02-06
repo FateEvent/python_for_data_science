@@ -4,15 +4,8 @@ ft_set = {"Hello", "tutu!"}
 ft_dict = {"Hello" : "titi!"}
 
 ft_list[1] = "World!"
-
-new_list = list(ft_tuple)
-new_list[1] = "France!"
-ft_tuple = tuple(new_list)
-
-new_set = set(("Hello", "Mulhouse!"))
-ft_set.clear()
-ft_set.update(new_set)
-
+ft_tuple = ("Hello", "France!")
+ft_set = {"Hello", "Mulhouse!"}
 ft_dict["Hello"] = "42Mulhouse!"
 
 print(ft_list)
