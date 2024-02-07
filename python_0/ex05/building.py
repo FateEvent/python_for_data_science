@@ -2,13 +2,22 @@ import sys
 
 
 def analyze_entry(line: str):
-    print(line)
+    if len(line):
+        if not line.isascii():
+            sys.exit("AssertionError: non ASCII characters in the string")
+
+        print(line)
     return 0
 
 
 def prompt_a_prompt():
-    print("prompt: >")
-    return "prompt: >"
+
+    buffer = list()
+    ret = ''
+    for line in sys.stdin:
+        buffer.append(line)
+
+    return ret.join(buffer)
 
 
 def main():
