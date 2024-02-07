@@ -18,9 +18,8 @@ try:
             raise AssertionError("unexisting number starting with zero")
         if not is_integer(sys.argv[1]):
             raise AssertionError("argument is not an integer")
-        num = float(sys.argv[1]).is_integer()
-        if num % 2 == 0:
-            print("{num} I'm Even.")
+        if float(sys.argv[1]) % 2 == 0:
+            print("I'm Even.")
         else:
             print("I'm Odd.")
     else:
