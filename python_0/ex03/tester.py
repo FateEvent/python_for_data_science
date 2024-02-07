@@ -12,3 +12,6 @@ NULL_not_found(Zero)
 NULL_not_found(Empty)
 NULL_not_found(Fake)
 print(NULL_not_found("Brian"))
+print(NULL_not_found(""))
+print(NULL_not_found())
+

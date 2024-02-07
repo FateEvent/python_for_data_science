@@ -1,4 +1,20 @@
-def NULL_not_found(object = None) -> int:
+def NULL_not_found(object: any = 'empty string') -> int:
 
-	print(type(object))
-	return 42
+    if object != 'empty string':
+
+        if object == '':
+            string = 'Empty'
+        elif object == float('NaN'):
+            string = 'Cheese'
+        elif object is False:
+            string = 'Fake'
+        elif object == 0:
+            string = 'Zero'
+        elif object is None:
+            string = 'Nothing'
+        else:
+            print("Type not found")
+            return 1
+
+        print(f'{string}: {object} {type(object)}')
+        return 0
