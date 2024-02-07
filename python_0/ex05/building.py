@@ -5,7 +5,6 @@ def ft_punctuation(match: str):
 
     punctuation = "!\"#$%&'()*+, -./:;<=>?@[\\]^_`{|}~"
     for c in match:
-        print("c: --> " + c)
         if c in punctuation:
             return 1
     return 0
@@ -19,18 +18,18 @@ def analyze_entry(line: str):
 
         uppers = 0
         lowers = 0
-        punct_marks = 0
         spaces = 0
+        punct_marks = 0
         digits = 0
         for c in line:
             if c.isupper():
                 uppers += 1
             elif c.islower():
                 lowers += 1
-            elif ft_punctuation(c):
-                punct_marks += 1
             elif c.isspace():
                 spaces += 1
+            elif ft_punctuation(c):
+                punct_marks += 1
             elif c.isdigit():
                 digits += 1
 
