@@ -9,7 +9,7 @@ def ft_punctuation(match: str):
     for a punctuation mark and returns 1 if it finds it and 0 otherwise.
     """
 
-    punctuation = "!\"#$%&'()*+, -./:;<=>?@[\\]^_`{|}~"
+    punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     for c in match:
         if c in punctuation:
             return 1

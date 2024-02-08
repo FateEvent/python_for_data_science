@@ -10,7 +10,7 @@ def ft_filter(__function: Callable[[_T], bool] | None,
     """
     ft_filter(function or None, iterable) --> list
 
-    Returns an iterator yielding those items of iterable for which
+    Returns a list yielding those items of iterable for which
     function(item) is true. If function is None, return the items that are
     true.
     """
@@ -37,7 +37,7 @@ def main():
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
         exit()
-    
+
     try:
         args = ft_filter(lambda w: len(w) > 5, ["0", "", "la mamma",
                                                 "va lontano", "a fare",
@@ -47,6 +47,7 @@ def main():
         print(f'{type(error).__name__}: {error}')
         exit()
 
+    print(ft_filter.__doc__)
     return 0
 
 

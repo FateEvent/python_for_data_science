@@ -47,9 +47,10 @@ def main():
             num = float(sys.argv[2])
         except Exception:
             raise AssertionError("error in converting the argument to float")
-
+        check_entry_format(sys.argv[1])
         args = ft_filter(lambda w: len(w) > num,
                          sys.argv[1].split())
+
         print(args)
 
     except Exception as error:
