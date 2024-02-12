@@ -1,4 +1,4 @@
-import sys
+import sys as sys
 
 
 def is_integer(n):
