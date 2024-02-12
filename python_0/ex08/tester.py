@@ -6,12 +6,14 @@ from Loading import ft_tqdm
 
 for elem in ft_tqdm(range(333)):
     sleep(0.005)
+    # print(elem)
 print()
 
 # print(tqdm.__doc__)
 
 # for elem in tqdm(range(333)):
 #     sleep(0.005)
+#     print(elem)
 # print()
 
 # for elem in tqdm(range(1000)):
