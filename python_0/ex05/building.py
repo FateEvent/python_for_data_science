@@ -1,4 +1,4 @@
-import sys as sys
+import sys
 
 
 def ft_punctuation(match: str):
