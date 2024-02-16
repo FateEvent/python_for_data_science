@@ -44,9 +44,9 @@ def main():
             raise AssertionError("the arguments are bad")
 
         try:
-            num = float(sys.argv[2])
+            num = int(sys.argv[2])
         except Exception:
-            raise AssertionError("error in converting the argument to float")
+            raise AssertionError("error in converting the argument to int")
         check_entry_format(sys.argv[1])
         args = ft_filter(lambda w: len(w) > num,
                          sys.argv[1].split())
