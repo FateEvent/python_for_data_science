@@ -20,9 +20,29 @@ print()
 
 print(" -- version fait maison -- ")
 
+for elem in ft_tqdm(range(100)):
+    sleep(0.05)
+    print(elem)
+
+print(" -o- original version  -o- ")
+
+for elem in tqdm(range(100)):
+    sleep(0.005)
+    print(elem)
+
+print(" -- version fait maison -- ")
+
 for elem in ft_tqdm(range(1000)):
     sleep(0.005)
     print()
+
+print(" -o- original version  -o- ")
+
+for elem in tqdm(range(1000)):
+    sleep(0.005)
+    print(elem)
+
+print(" -- version fait maison -- ")
 
 for elem in ft_tqdm(range(600)):
     sleep(0.005)
