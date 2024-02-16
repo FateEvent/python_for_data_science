@@ -1,6 +1,6 @@
 __version__ = '0.0.1'
 
-from .ft_functions import ft_filter
+from .ft_builtins import ft_filter
 from .text_handling import ft_punctuation, check_entry_format, \
     is_integer, prompt_a_prompt
 from .Loading import ft_tqdm
