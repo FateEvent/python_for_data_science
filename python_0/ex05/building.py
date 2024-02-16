@@ -1,7 +1,7 @@
 import sys
 
 
-def ft_punctuation(match: str):
+def ft_punctuation(match: str) -> int:
     """
     ft_punctuation(match: str) --> int
 
@@ -56,7 +56,7 @@ def analyze_entry(line: str):
         print(f'{digits} digits')
 
 
-def prompt_a_prompt():
+def prompt_a_prompt() -> str:
     """
     prompt_a_prompt() --> str
 

@@ -1,5 +1,7 @@
 def ft_tqdm(lst: range) -> None:
     """
+    ft_tqdm(lst: range) --> None
+
     The `tqdm` function is what's called a generator function, a function
     that acts as an iterable since it returns a generator object that is
     iterable, i.e. can be used as an Iterator.

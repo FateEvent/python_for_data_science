@@ -1,5 +1,4 @@
 import sys
-from ft_filter import ft_filter
 
 
 def ft_punctuation(match: str) -> int:
@@ -37,28 +36,33 @@ def check_entry_format(line: str):
         raise AssertionError("the string is empty")
 
 
-def main():
+def is_integer(n) -> bool:
+    """
+    is_integer(n) --> bool
+
+    The function returns True if the number passed as parameter is an integer;
+    False otherwise.
+    """
 
     try:
-        if len(sys.argv) != 3:
-            raise AssertionError("the arguments are bad")
-
-        try:
-            num = int(sys.argv[2])
-        except Exception:
-            raise AssertionError("error in converting the argument to int")
-        check_entry_format(sys.argv[1])
-        args = ft_filter(lambda w: len(w) > num,
-                         sys.argv[1].split())
-
-        print(args)
-
-    except Exception as error:
-        print(f'{type(error).__name__}: {error}')
-        exit()
-
-    return 0
+        float(n)
+    except ValueError:
+        return False
+    else:
+        return float(n).is_integer()
 
 
-if __name__ == "__main__":
-    main()
+def prompt_a_prompt() -> str:
+    """
+    prompt_a_prompt() --> str
+
+    A prompt is offered to the user and their input is appended
+    to a buffer which is returned.
+    """
+
+    buffer = list()
+    ret = ''
+    for line in sys.stdin:
+        buffer.append(line)
+
+    return ret.join(buffer)

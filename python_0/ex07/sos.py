@@ -1,7 +1,7 @@
 import sys
 
 
-def ft_punctuation(match: str):
+def ft_punctuation(match: str) -> int:
     """
     ft_punctuation(match: str) --> int
 

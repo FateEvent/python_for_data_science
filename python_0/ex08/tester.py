@@ -50,10 +50,6 @@ for elem in ft_tqdm(range(600)):
 
 print(" -o- original version  -o- ")
 
-for elem in tqdm(range(1000)):
-    sleep(0.005)
-    print(elem)
-
 for elem in tqdm(range(600)):
     sleep(0.005)
     print(elem)
