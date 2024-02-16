@@ -20,7 +20,7 @@ print()
 
 print(" -- version fait maison -- ")
 
-for elem in ft_tqdm(range(100)):
+for elem in ft_tqdm(range(100), True):
     sleep(0.05)
     print(elem)
 
