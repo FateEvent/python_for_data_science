@@ -4,7 +4,7 @@ def NULL_not_found(object: any = 'empty string') -> int:
 
         if object == '':
             string = 'Empty'
-        elif object == float('NaN'):
+        elif object != object:
             string = 'Cheese'
         elif object is False:
             string = 'Fake'

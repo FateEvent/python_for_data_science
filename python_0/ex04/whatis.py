@@ -21,8 +21,6 @@ try:
     if len(sys.argv) == 2:
         if len(sys.argv[1]) > 15:
             raise AssertionError("too many characters")
-        if sys.argv[1][0] == '0' and sys.argv[1][1] != '.':
-            raise AssertionError("unexisting number starting with zero")
         if not is_integer(sys.argv[1]):
             raise AssertionError("argument is not an integer")
         if float(sys.argv[1]) % 2 == 0:
