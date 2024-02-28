@@ -2,12 +2,10 @@ import sys
 
 
 def ft_punctuation(match: str) -> int:
-    """
-    ft_punctuation(match: str) --> int
+    """ft_punctuation(match: str) --> int
 
-    The function checks each character of the string passed as a parameter
-    for a punctuation mark and returns 1 if it finds it and 0 otherwise.
-    """
+The function checks each character of the string passed as a parameter
+for a punctuation mark and returns 1 if it finds it and 0 otherwise."""
 
     punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     for c in match:
@@ -17,13 +15,11 @@ def ft_punctuation(match: str) -> int:
 
 
 def check_entry_format(line: str):
-    """
-    check_entry_format(line: str)
+    """check_entry_format(line: str)
 
-    The function parses the string passed as a parameter and raises exceptions
-    if non-ascii characters, punctuation marks or non-printable characters are
-    present.
-    """
+The function parses the string passed as a parameter and raises exceptions
+if non-ascii characters, punctuation marks or non-printable characters are
+present."""
 
     if len(line):
         if not line.isascii():
@@ -37,12 +33,10 @@ def check_entry_format(line: str):
 
 
 def create_dictionary(dictionary: dict):
-    """
-    create_dictionary(dictionary: dict) --> dict
+    """create_dictionary(dictionary: dict) --> dict
 
-    The function returns a dictionary made up of latin alphanumeric characters
-    as entries and the corresponding morse code values as values.
-    """
+The function returns a dictionary made up of latin alphanumeric characters
+as entries and the corresponding morse code values as values."""
 
     latin_chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
                    "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
@@ -64,9 +58,8 @@ def create_dictionary(dictionary: dict):
 
 
 def main():
-    """
-    The program takes a string as an argument and encodes it into Morse Code.
-    """
+    """The program takes a string as an argument and encodes it into
+Morse Code."""
 
     try:
         if len(sys.argv) != 2:

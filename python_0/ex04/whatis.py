@@ -2,12 +2,10 @@ import sys
 
 
 def is_integer(n) -> bool:
-    """
-    is_integer(n) --> bool
+    """is_integer(n) --> bool
 
-    The function returns True if the number passed as parameter is an integer;
-    False otherwise.
-    """
+The function returns True if the number passed as parameter is an integer;
+False otherwise."""
 
     try:
         float(n)

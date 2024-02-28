@@ -2,12 +2,10 @@ import sys
 
 
 def ft_punctuation(match: str) -> int:
-    """
-    ft_punctuation(match: str) --> int
+    """ft_punctuation(match: str) --> int
 
-    The function checks each character of the string passed as a parameter
-    for a punctuation mark and returns 1 if it finds it and 0 otherwise.
-    """
+The function checks each character of the string passed as a parameter
+for a punctuation mark and returns 1 if it finds it and 0 otherwise."""
 
     punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     for c in match:
@@ -17,14 +15,12 @@ def ft_punctuation(match: str) -> int:
 
 
 def analyze_entry(line: str):
-    """
-    analyze_entry(line: str)
+    """analyze_entry(line: str)
 
-    The function parses the string passed as a parameter and prints on the
-    standard output the number of total characters present in the string as
-    well as the count of uppercase and lowercase letters, punctuation marks,
-    spaces and digits.
-    """
+The function parses the string passed as a parameter and prints on the
+standard output the number of total characters present in the string as
+well as the count of uppercase and lowercase letters, punctuation marks,
+spaces and digits."""
 
     if len(line):
 
@@ -57,12 +53,10 @@ def analyze_entry(line: str):
 
 
 def prompt_a_prompt() -> str:
-    """
-    prompt_a_prompt() --> str
+    """prompt_a_prompt() --> str
 
-    A prompt is offered to the user and their input is appended
-    to a buffer which is returned.
-    """
+A prompt is offered to the user and their input is appended
+to a buffer which is returned."""
 
     buffer = list()
     ret = ''
@@ -73,11 +67,9 @@ def prompt_a_prompt() -> str:
 
 
 def building():
-    """
-    The goal of this program is parsing the text given as an argument
-    or prompted by the user and displays the count of its upper-case
-    and lower-case characters, punctuation marks, digits and spaces.
-    """
+    """The goal of this program is parsing the text given as an argument
+or prompted by the user and displays the count of its upper-case
+and lower-case characters, punctuation marks, digits and spaces."""
 
     try:
         if len(sys.argv) > 2:
