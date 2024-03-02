@@ -50,7 +50,7 @@ def main():
                          sys.argv[1].split())
 
         print(list(args))
-        print(type(args))
+        # print(type(args))
         print(ft_filter.__doc__)
 
         print('\n-o- built-in filter() function -o-\n')
@@ -58,7 +58,7 @@ def main():
                       sys.argv[1].split())
 
         print(list(args))
-        print(type(args))
+        # print(type(args))
         print(filter.__doc__)
 
     except Exception as error:
