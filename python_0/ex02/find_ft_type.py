@@ -1,7 +1,7 @@
 def all_thing_is_obj(object: any = 'empty string') -> int:
 
     if object != 'empty string' and object is not None:
-        types = (bool, int, float, complex, str, list, tuple, set, dict)
+        types = (str, list, tuple, set, dict)
 
         i = 0
         while i < len(types):
@@ -10,13 +10,14 @@ def all_thing_is_obj(object: any = 'empty string') -> int:
                 break
             i += 1
 
-        if i == 4:
-            type_str = object + ' is in the kitchen'
+        if i == 0:
+            type_str = f'{object} is in the kitchen : {types[i]}'
         elif i == len(types) or object is None:
-            type_str = 'none'
+            type_str = 'Type not found'
         else:
             type_str = str(types[i])
             type_str = type_str[type_str.find('\'') + 1:type_str.rfind('\'')]
+            type_str = f'{type_str.capitalize()} : {types[i]}'
 
-        print(f'{type_str.capitalize()} : {types[i]}')
+        print(type_str)
         return 42
