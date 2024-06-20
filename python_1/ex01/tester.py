@@ -6,10 +6,19 @@ family = [[1.80, 78.4],
           [1.88, 75.2]]
 
 print(slice_me(family, 0, 2))
+
 print(slice_me(family, 1, -2))
 
 print(slice_me(family, -1, -1))
+# Exception
+
 print(slice_me(family, -1, -2))
+# Exception
+
 print(slice_me(family, -4, -1))
+
 print(slice_me(family, -6, -1))
+# Exception
+
 print(slice_me(family, 7, 6))
+# Exception

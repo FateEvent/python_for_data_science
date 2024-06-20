@@ -20,12 +20,21 @@ is out of bounds."""
 
     if start >= length or end >= length:
         raise AssertionError("start or end index out of bounds")
+    
+    if start == end:
+        raise AssertionError("start and end indexes are equal")
 
-    if start >= 0 and end >= 0 and start >= end:
-        raise AssertionError("start or end index out of bounds")
+    if start >= 0 and end >= 0 and start > end:
+        raise AssertionError("start is greater than end")
 
-    if start < 0 and end < 0 and start >= end:
-        raise AssertionError("start or end index out of bounds")
+    if start < 0 and end < 0 and start > end:
+        raise AssertionError("start is greater than end")
+
+    if start < 0 and np.abs(start) > length:
+        raise AssertionError("start index out of bounds")
+
+    if end < 0 and np.abs(end) > length:
+        raise AssertionError("end index out of bounds")
 
 
 def slice_me(family: list, start: int, end: int) -> list:
@@ -49,7 +58,6 @@ value at the end index."""
     print(f'My shape is : {old_shape}')
     print(f'My new shape is : {new_shape}')
     print()
-
     return sliced
 
 
