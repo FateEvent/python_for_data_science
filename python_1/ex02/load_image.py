@@ -19,8 +19,20 @@ and its pixels content in RGB format."""
             img.load()
 
         print(f'The shape of the image is: { np.shape(img) }')
-        img.show()
-        return list(img.getdata())
+        return np.array(img.getdata())
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
         return
+
+
+def main():
+    try:
+        print(ft_load("../img/animal.jpeg"))
+    except Exception as error:
+        print(f'{type(error).__name__}: {error}')
+        print()
+    return 0
+
+
+if __name__ == "__main__":
+    main()
