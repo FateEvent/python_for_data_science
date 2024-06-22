@@ -1,4 +1,4 @@
-from PIL import Image, ImageOps
+from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -16,23 +16,66 @@ received."""
 
     return arr
 
-# def ft_red(array) -> array:
 
-# def ft_green(array) -> array:
+def ft_red(array: np.array) -> np.array:
+    """The ft_red() function converts the image to redscale."""
 
-# def ft_blue(array) -> array:
+    red = array.copy()
+    red[:, :, (1, 2)] = 0
 
-# def ft_grey(array) -> array:
+    img = Image.fromarray(red, "RGB")
+    print(red)
+    img.show()
+
+    return red
+
+
+def ft_green(array: np.array) -> np.array:
+    """The ft_green() function converts the image to greenscale."""
+
+    green = array.copy()
+    green[:, :, (0, 2)] = 0
+
+    img = Image.fromarray(green, "RGB")
+    print(green)
+    img.show()
+
+    return green
+
+
+def ft_blue(array: np.array) -> np.array:
+    """The ft_blue() function converts the image to bluescale."""
+
+    blue = array.copy()
+    blue[:, :, (0, 1)] = 0
+
+    img = Image.fromarray(blue, "RGB")
+    print(blue)
+    img.show()
+
+    return blue
+
+
+def ft_grey(array: np.array) -> np.array:
+    """The ft_grey() function converts the image to grayscale."""
+
+    arr = np.mean(array, axis=2).astype(np.uint8)
+    img = Image.fromarray(arr, "L")
+    print(arr)
+    img.show()
+
+    return arr
 
 
 def main():
     try:
         pixel_arr = ft_load("../img/animal.jpeg").astype(np.uint8)
-        img = Image.fromarray(pixel_arr, "RGB").crop((455, 110, 850, 490))
+        piggy = ft_invert(pixel_arr)
+
+        img = Image.fromarray(piggy, "RGB").crop((455, 110, 850, 490))
         img = img.convert("L")
-        img = ImageOps.mirror(img)
         print(np.asarray(img))
-        img = img.rotate(90)
+        img = img.rotate(180)
         print(f'New shape after Transpose: { np.shape(img) }')
         print(np.array(img))
         plt.imshow(img, cmap='gray', vmin=0, vmax=255)
