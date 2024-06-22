@@ -8,4 +8,9 @@ To return an an array of RGB pixels, in the `ft_load()` function, I use `np.asar
 
 I then use the method [`.convert("L")`](https://stackoverflow.com/questions/3823752/display-image-as-grayscale) to convert the image to grayscale and show it with the [matplotLib](https://matplotlib.org/stable) method [.imshow()](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html).
 
-To rotate the image there are [various options](https://stackoverflow.com/questions/31401812/matplotlib-rotate-image-file-by-x-degrees) available, among which the `.rotate()` method from the Pillow library.
+To rotate the image there are [various options](https://stackoverflow.com/questions/31401812/matplotlib-rotate-image-file-by-x-degrees) available, among which the [`.rotate()`](https://note.nkmk.me/en/python-pillow-flip-mirror) method from the ImageOps module of the Pillow library.
+
+To [invert the colours](https://stackoverflow.com/questions/47382482/inverting-pixels-of-an-rgb-image-in-python) of an image (i.e. obtaining its negative), I subtract the array of pixels from 255 (and not the opposite).
+
+For an explanation of the RGB colours, see this interesting and complete article on [geraldbakker.nl](https://www.geraldbakker.nl/psnumbers/rgb-explained.html).
+
