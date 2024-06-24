@@ -1,4 +1,4 @@
-# Python 0
+# Python - 0 - Starting
 
 ### Exercise 08: Loading
 
@@ -8,6 +8,18 @@ Instead of the `return` statement, a generator function uses the [`yield`](https
 To create a progress bar, I took inspiration from [Build your own Command Line with ANSI escape codes](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#ascii-progress-bar) from Haoyi's Programming Blog.
 To format my output, I used the [`.format()`](https://docs.python.org/3.10/tutorial/inputoutput.html) method of the `string` object and put [`end=\r`](https://stackoverflow.com/questions/4897359/output-to-the-same-line-overwriting-previous-output) in my print statements to always print on the same line.
 
-###### To go further:
+##### To go further:
 
 I would have highly appreciated to have access to the [`get_terminal_size()`](https://www.geeksforgeeks.org/python-os-get_terminal_size-method) method to be able to calculate the width of my progress bar based on the width of the terminal.
+
+### A [Virtual ENVironment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments)
+
+##### To create a virtual environment in Python:
+```
+python3 -m venv /path_to_env
+```
+
+#### To activate the virtual environment:
+```
+source /path_to_env/bin/activate
+```
