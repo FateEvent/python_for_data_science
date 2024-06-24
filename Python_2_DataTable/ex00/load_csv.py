@@ -14,7 +14,7 @@ of the data set on the terminal and returns it."""
         return
 
     try:
-        df = pd.read_csv(path, index_col=0)
+        df = pd.read_csv(path)
 
         print(f'Loading dataset of dimensions { df.shape }')
         return df
