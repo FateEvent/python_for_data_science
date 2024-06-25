@@ -21,7 +21,20 @@ To obtain a [subset of data](https://pandas.pydata.org/docs/getting_started/intr
 And then I use the `.plot` method to create a visual chart with `matplotlib.pyplot`:
 
 ```
-    df_france.plot()
+    life_expectancy = df_france.values[0][1:]
+    years = df.columns[1:]
+    years = pd.to_numeric(years)
+
+    plt.plot(years, life_expectancy)
 ```
-The axis labels are then set with `plt.xlabel()` and `plt.ylabel()` functions.
+The axis labels are then set with `plt.xlabel()` and `plt.ylabel()` functions, and `plt.xticks()` is used to set the interval of 40 between the year values:
+
+```
+    plt.xlabel("Year")
+    plt.ylabel("Life Expectancy")
+    plt.title("France Life Expectancy Projections")
+
+    custom_ticks = list(range(1800, 2100, 40))
+    plt.xticks(custom_ticks)
+```
 
