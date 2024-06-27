@@ -1,5 +1,4 @@
 import sys
-import pandas as pd
 import matplotlib.pyplot as plt
 
 from load_csv import load
@@ -11,17 +10,20 @@ def main():
             raise AssertionError("more than one argument is provided")
         if len(sys.argv) == 1:
             print('Please, choose a country.')
-            chosen_country = sys.stdin.read()
+            chosen_country = sys.stdin.readline().strip()
         else:
-            chosen_country = sys.argv[1]
-        chosen_country = chosen_country.rstrip()
+            chosen_country = sys.argv[1].strip()
 
         df = load("../material/life_expectancy_years.csv")
 
-        df_france = df[df["country"] == chosen_country]
-        life_expectancy = df_france.values[0][1:]
-        years = df.columns[1:]
-        years = pd.to_numeric(years)
+        df_chosen_country = df[df["country"] == chosen_country]
+
+        if df_chosen_country.empty:
+            raise ValueError(f'Data for {chosen_country} is not available \
+                             in the dataset')
+
+        life_expectancy = df_chosen_country.values[0][1:]
+        years = df.columns[1:].astype(int)
 
         plt.plot(years, life_expectancy)
 
