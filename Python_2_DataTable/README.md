@@ -85,3 +85,9 @@ And finally I set the [legend location](https://stackoverflow.com/questions/5979
     ax.legend(loc='lower right')
 ```
 
+Another type of plot if [the scattered plot](https://matplotlib.org/stable/plot_types/index.html).
+
+To realise a scattered plot, we use the `.scatter()` method instead of the `.plot()` method.
+As this one, `scatter()` may take as parameters the x and y axes data.
+
+To define the scale of the x axis I made use of the [`xscale()`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xscale.html) of `matplotlib.pyplot`, with the [logarithmic option](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xscale.html).

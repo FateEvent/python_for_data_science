@@ -21,3 +21,22 @@ of the data set on the terminal and returns it."""
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
         return
+
+
+def main():
+    try:
+        print(load("../material/population_total.csv"))
+    except Exception as error:
+        print(f'{type(error).__name__}: {error}')
+        print()
+
+    try:
+        print(load("../nonexisting.csv"))
+    except Exception as error:
+        print(f'{type(error).__name__}: {error}')
+        print()
+    return 0
+
+
+if __name__ == "__main__":
+    main()
