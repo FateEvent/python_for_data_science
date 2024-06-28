@@ -6,10 +6,13 @@ from load_csv import load
 
 
 def millions_formatter(x, pos):
+    """The millions_formatter() function creates a million formatting
+for the y axis ticks."""
     return f'{x / 1e6:.1f}M'
 
 
 def convert(value: str) -> float:
+    """The convert() function convert to float the dataframe values."""
 
     if value.endswith('M'):
         return float(value[:-1]) * 1e6
@@ -20,6 +23,11 @@ def convert(value: str) -> float:
 
 
 def main():
+    """The program calls the load() function, loads the file
+population_total.csv, and displays the country information of your
+campus and that of the campus of your choice.
+"""
+
     try:
         if len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")

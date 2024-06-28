@@ -5,6 +5,11 @@ from load_csv import load
 
 
 def main():
+    """The program calls the load() function, loads the file
+life_expectancy_years.csv, and displays the country information of
+the country of your choice.
+"""
+
     try:
         if len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")

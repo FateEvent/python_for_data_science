@@ -5,74 +5,51 @@ from matplotlib.ticker import FuncFormatter
 from ft_package import load
 
 
-def millions_formatter(x, pos):
-    return f'{x / 1e6:.1f}M'
-
-
-def convert(value: str) -> float:
-
-    if value.endswith('M'):
-        return float(value[:-1]) * 1e6
-    elif value.endswith('k'):
-        return float(value[:-1]) * 1e3
-    else:
-        return float(value)
-
-
 def main():
+    """The program calls the load() function, loads the file
+income_per_person_gdppercapita_ppp_inflation_adjusted.csv, and
+displays the projection of life expectancy in relation to the
+gross national product of the year of your choice for each country.
+"""
+
     try:
         if len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")
         if len(sys.argv) == 1:
             print('Please, choose a second country to compare France with.')
-            chosen_country = sys.stdin.readline().strip()
+            chosen_year = sys.stdin.readline().strip()
         else:
-            chosen_country = sys.argv[1].strip()
+            chosen_year = sys.argv[1].strip()
 
         prefix = "../material/"
         path = "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
 
-        df = load(prefix + path)
+        df_income = load(prefix + path)
+        df_life = load("../material/life_expectancy_years.csv")
 
-        df_france = df[df["country"] == "France"]
-        df_chosen_country = df[df["country"] == chosen_country]
+        life_expectancy = df_life.columns[1:].astype(int).values
 
-        if df_france.empty:
-            raise ValueError("Data for France is not available in the dataset")
-        if df_chosen_country.empty:
-            raise ValueError(f"Data for {chosen_country} is not available \
-                             in the dataset")
+        print(life_expectancy)
+        print(life_expectancy)
 
-        france_pop = df_france.values[0][1:]
-        france_pop = [convert(entry) for entry in france_pop]
+        # ax.plot(years, france_pop, label="France")
 
-        chosen_pop = df_chosen_country.values[0][1:]
-        chosen_pop = [convert(entry) for entry in chosen_pop]
+        # ax.set_xlabel("Gross Domestic Product")
+        # ax.set_ylabel("Life Expectancy")
 
-        years = df.columns[1:].astype(int).values
+        # year_ticks = list(range(1800, 2051, 40))
+        # plt.xticks(year_ticks)
+        # plt.xlim(right=2050)
 
-        fig, ax = plt.subplots()
+        # ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
 
-        ax.plot(years, france_pop, label="France")
-        ax.plot(years, chosen_pop, label=chosen_country)
+        # pop_ticks = list(range(0, 70000000, 20000000))
+        # plt.yticks(pop_ticks)
+        # plt.ylim(top=70000000)
 
-        ax.set_xlabel("Year")
-        ax.set_ylabel("Population")
-        ax.legend(loc='lower right')
+        # plt.title("Population Projections")
 
-        year_ticks = list(range(1800, 2051, 40))
-        plt.xticks(year_ticks)
-        plt.xlim(right=2050)
-
-        ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
-
-        pop_ticks = list(range(0, 70000000, 20000000))
-        plt.yticks(pop_ticks)
-        plt.ylim(top=70000000)
-
-        plt.title("Population Projections")
-
-        plt.show()
+        # plt.show()
 
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
