@@ -19,7 +19,7 @@ I would have highly appreciated to have access to the [`get_terminal_size()`](ht
 python3 -m venv /path_to_env
 ```
 
-#### To activate the virtual environment:
+##### To activate the virtual environment:
 ```
 source /path_to_env/bin/activate
 ```

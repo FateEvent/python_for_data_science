@@ -37,4 +37,51 @@ The axis labels are then set with `plt.xlabel()` and `plt.ylabel()` functions, a
     custom_ticks = list(range(1800, 2100, 40))
     plt.xticks(custom_ticks)
 ```
+##### Plot Multiple Lines
+
+To [plot multiple lines](https://stackoverflow.com/a/40071258) I used the I didn't use the `.subplot()` method:
+
+```python
+    fig, ax = plt.subplots()
+
+    ax.plot(years, france_pop, label="France")
+    ax.plot(years, chosen_pop, label=chosen_country)
+```
+
+To [modify a column](https://stackoverflow.com/a/12605055) of the dataframe a create the function `convert()` and used it in a list comprehension structure:
+
+```python
+    def convert(value: str) -> float:
+
+        if value.endswith('M'):
+            return float(value[:-1]) * 1e6
+        elif value.endswith('k'):
+            return float(value[:-1]) * 1e3
+        else:
+            return float(value)
+
+    <SNIP>
+
+    france_pop = df_france.values[0][1:]
+    france_pop = [convert(entry) for entry in france_pop]
+```
+
+And to display the modified Y axis I create a function `millions_formatter()` and used the [`FuncFormatter()` method](https://stackoverflow.com/a/40511626) from `matplotlib.ticker`:
+
+```python
+    def millions_formatter(x, pos):
+        return f'{x / 1e6:.1f}M'
+
+    <SNIP>
+
+    ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
+```
+
+And finally I set the [legend location](https://stackoverflow.com/questions/59791884/set-the-legend-location-of-a-pandas-plot) to the bottom right corner of the chart with the `.legend()` method:
+
+```python
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Population")
+    ax.legend(loc='lower right')
+```
 
