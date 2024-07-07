@@ -29,3 +29,12 @@ To understand how to create getters and setters I followed the leads of [this ar
     def is_alive(self):
         return self._is_alive
 ```
+### [Multiple Inheritance, and the Diamond Problem](https://www.datacamp.com/tutorial/super-multiple-inheritance-diamond-problem)
+
+Python manages automatically the diamond problem.
+
+When a class derived from two or more classes that derive from a common ancestor is instantiated, every parent class `__init__()` method is called once, but the program doesn't wait for the others to stop before starting a new one.
+
+Attributes with a same name will be overwritten.
+
+To reiterate, the diamond problem can get complicated fast and lead to unexpected results. That's why Python avoids complicated designs.
