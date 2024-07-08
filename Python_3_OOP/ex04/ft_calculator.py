@@ -4,6 +4,8 @@ two vectors"""
 
     @staticmethod
     def dotproduct(V1: list[float], V2: list[float]) -> None:
+        """The dotproduct() function computes the dot product \
+between two vectors"""
 
         try:
             sum = 0
@@ -15,6 +17,8 @@ two vectors"""
 
     @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
+        """The add_vec() function calculates the sum of two \
+vectors"""
 
         try:
             res = [e1 + e2 for e1, e2 in zip(V1, V2)]
@@ -24,6 +28,8 @@ two vectors"""
 
     @staticmethod
     def sub_vec(V1: list[float], V2: list[float]) -> None:
+        """The sub_vec() function calculates the difference \
+of two vectors"""
 
         try:
             res = [e1 - e2 for e1, e2 in zip(V1, V2)]
