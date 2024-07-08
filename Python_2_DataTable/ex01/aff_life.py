@@ -34,7 +34,7 @@ in the dataset')
 
         plt.xlabel("Year")
         plt.ylabel("Life Expectancy")
-        plt.title("France Life Expectancy Projections")
+        plt.title(f'{ chosen_country } Life Expectancy Projections')
 
         custom_ticks = list(range(1800, 2100, 40))
         plt.xticks(custom_ticks)
