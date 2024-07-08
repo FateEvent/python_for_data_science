@@ -1,4 +1,5 @@
 def ft_mean(args: any) -> None:
+    """ft_mean() computes the median of an array of numbers"""
     sum = 0.0
     for entry in args:
         sum += float(entry)
@@ -7,6 +8,7 @@ def ft_mean(args: any) -> None:
 
 
 def ft_median(args: any) -> None:
+    """ft_median() computes the median of an array of numbers"""
 
     sort = sorted(args)
     length = len(sort)
