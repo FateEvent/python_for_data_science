@@ -6,6 +6,10 @@ from load_image import ft_load
 
 
 def main():
+    """The program loads the image "animal.jpeg", cuts a square part from it \
+and transpose it to produce the image shown. It should display it, print the \
+new shape and the data of the image after the transpose."""
+
     try:
         pixel_arr = ft_load("../img/animal.jpeg").astype(np.uint8)
         img = Image.fromarray(pixel_arr, "RGB").crop((455, 110, 850, 490))

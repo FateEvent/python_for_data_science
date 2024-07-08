@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def load(path: str) -> pd.DataFrame:
-    """The load() function loads a CSV file, prints the dimensions
+    """The load() function loads a CSV file, prints the dimensions \
 of the data set on the terminal and returns it."""
 
     try:

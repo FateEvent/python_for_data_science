@@ -4,7 +4,7 @@ import numpy as np
 def check_type(family: list):
     """check_type(family: list)
 
-The check_type() function takes a list in input and checks whether
+The check_type() function takes a list in input and checks whether \
 its type is list."""
 
     if not isinstance(family, list):
@@ -14,8 +14,8 @@ its type is list."""
 def check_indexes(length: int, start: int, end: int):
     """check_indexes(length: int, start: int, end: int)
 
-The check_indexes() function takes the list lenght and the start
-end end indexes and check whether at least one of the indexes
+The check_indexes() function takes the list lenght and the start \
+end end indexes and check whether at least one of the indexes \
 is out of bounds."""
 
     if start >= length or end >= length:
@@ -40,8 +40,8 @@ is out of bounds."""
 def slice_me(family: list, start: int, end: int) -> list:
     """slice_me(family: list, start: int, end: int) -> list
 
-The slice_me() function takes a list of element and returns
-its array slice from the value at the start index until the
+The slice_me() function takes a list of element and returns \
+its array slice from the value at the start index until the \
 value at the end index."""
 
     try:

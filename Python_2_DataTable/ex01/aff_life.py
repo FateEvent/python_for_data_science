@@ -5,8 +5,8 @@ from load_csv import load
 
 
 def main():
-    """The program calls the load() function, loads the file
-life_expectancy_years.csv, and displays the country information of
+    """The program calls the load() function, loads the file \
+life_expectancy_years.csv, and displays the country information of \
 the country of your choice.
 """
 
@@ -25,7 +25,7 @@ the country of your choice.
 
         if df_chosen_country.empty:
             raise ValueError(f'Data for {chosen_country} is not available \
-                             in the dataset')
+in the dataset')
 
         life_expectancy = df_chosen_country.values[0][1:]
         years = df.columns[1:].astype(int)

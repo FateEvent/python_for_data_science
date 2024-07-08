@@ -4,11 +4,10 @@ from load_csv import load
 
 
 def main():
-    """The program calls the load() function, loads the file
-income_per_person_gdppercapita_ppp_inflation_adjusted.csv, and
-displays the projection of life expectancy in relation to the
-gross national product of the year of your choice for each country.
-"""
+    """The program calls the load() function, loads the file \
+income_per_person_gdppercapita_ppp_inflation_adjusted.csv, and \
+displays the projection of life expectancy in relation to the \
+gross national product of the year of your choice for each country."""
 
     try:
         if len(sys.argv) > 2:
@@ -30,10 +29,10 @@ gross national product of the year of your choice for each country.
 
         if df_income.empty:
             raise ValueError(f'The year { chosen_year } is not present in \
-                             the dataset.')
+the dataset.')
         if df_life.empty:
             raise ValueError(f'The year { chosen_year } is not present in \
-                             the dataset.')
+the dataset.')
 
         print(df_income)
         print(df_life)

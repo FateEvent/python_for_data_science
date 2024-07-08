@@ -6,8 +6,9 @@ from load_csv import load
 
 
 def millions_formatter(x, pos):
-    """The millions_formatter() function creates a million formatting
+    """The millions_formatter() function creates a million formatting \
 for the y axis ticks."""
+
     return f'{x / 1e6:.1f}M'
 
 
@@ -23,8 +24,8 @@ def convert(value: str) -> float:
 
 
 def main():
-    """The program calls the load() function, loads the file
-population_total.csv, and displays the country information of your
+    """The program calls the load() function, loads the file \
+population_total.csv, and displays the country information of your \
 campus and that of the campus of your choice.
 """
 

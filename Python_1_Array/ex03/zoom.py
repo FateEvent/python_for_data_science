@@ -6,6 +6,10 @@ from load_image import ft_load
 
 
 def main():
+    """The program loads the image "animal.jpeg", prints some information \
+about it and display itin greyscale after "zooming". It also shows the number \
+of channels, the pixel content of the image, the scale on the x and y axis."""
+
     try:
         pixel_arr = ft_load("../img/animal.jpeg").astype(np.uint8)
         print(pixel_arr)

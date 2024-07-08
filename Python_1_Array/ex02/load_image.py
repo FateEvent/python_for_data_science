@@ -4,7 +4,7 @@ from PIL import Image
 
 
 def ft_load(path: str) -> np.array:
-    """The ft_load() function loads an image, prints its format
+    """The ft_load() function loads an image, prints its format \
 and its pixels content in RGB format."""
 
     try:
