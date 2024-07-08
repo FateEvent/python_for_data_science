@@ -41,4 +41,8 @@ To reiterate, the diamond problem can get complicated fast and lead to unexpecte
 
 ### Operator Overloading
 
-To [overload an operator](https://www.geeksforgeeks.org/operator-overloading-in-python)
+To [overload operators](https://www.geeksforgeeks.org/operator-overloading-in-python) such as `+`, `-`, `*` and `/`, you can "re"`def`ine the functions def `__add__`, `__mul__`, `__sub__`, `__truediv__` respectively.
+
+### The `@staticmethod` decorator
+
+To use a class method without need to instantiate the class, you can use the [`@staticmethod`](https://stackoverflow.com/a/9934178) decorator.

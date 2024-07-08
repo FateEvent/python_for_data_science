@@ -1,9 +1,9 @@
 class calculator:
-    """The Calculator class allows to perform elementary
-operations on a vector"""
+    """The Calculator class allows to perform elementary operations \
+on a vector"""
 
     def __init__(self, slice):
-        """The __init__() function initialises an instance of the
+        """The __init__() function initialises an instance of the \
 calculator class"""
         self.slice = slice
 
