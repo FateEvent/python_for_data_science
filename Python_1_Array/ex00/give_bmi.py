@@ -4,8 +4,8 @@ import numpy as np
 def check_type(lst: list[int | float]):
     """check_type(lst: list[int | float])
 
-The check_type() function takes a list of integers or floats in input
-and checks whether the elements are of the proper type (i.e. int or
+The check_type() function takes a list of integers or floats in input \
+and checks whether the elements are of the proper type (i.e. int or \
 float)."""
 
     for el in lst:
@@ -16,9 +16,9 @@ float)."""
 def check_errors(lst1: list[int | float], lst2: list[int | float]):
     """check_errors(lst1: list[int | float], lst2: list[int | float])
 
-The check_errors() function takes 2 lists of integers or floats
-in input and checks whether the two lists have the same size and if 
-they contain the proper element type (i.e. int or float)."""
+The check_errors() function takes 2 lists of integers or floats \
+in input and checks whether the two lists have the same size and \
+if they contain the proper element type (i.e. int or float)."""
 
     if len(lst1) != len(lst2):
         raise AssertionError("the lists have not the same size")
@@ -31,7 +31,7 @@ def give_bmi(height: list[int | float],
     """give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]
 
-The give_bmi() function takes 2 lists of integers or floats
+The give_bmi() function takes 2 lists of integers or floats \
 in input and returns a list of BMI values."""
 
     try:
@@ -46,8 +46,8 @@ in input and returns a list of BMI values."""
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """apply_limit(bmi: list[int | float], limit: int) -> list[bool]
 
-The apply_limit() function takes a list of integers or floats in input
-and a limit and returns False if each element is inferiour or equal to
+The apply_limit() function takes a list of integers or floats in input \
+and a limit and returns False if each element is inferiour or equal to \
 the limit, and True otherwise."""
 
     try:

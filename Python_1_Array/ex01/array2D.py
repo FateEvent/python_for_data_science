@@ -20,7 +20,7 @@ is out of bounds."""
 
     if start >= length or end >= length:
         raise AssertionError("start or end index out of bounds")
-    
+
     if start == end:
         raise AssertionError("start and end indexes are equal")
 
