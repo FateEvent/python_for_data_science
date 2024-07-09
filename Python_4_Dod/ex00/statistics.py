@@ -1,13 +1,13 @@
-def ft_mean(args: any) -> None:
+def ft_mean(args: any) -> float:
     """ft_mean() computes the median of an array of numbers"""
     sum = 0.0
     for entry in args:
         sum += float(entry)
 
-    print(f'mean: { round(sum / len(args), 2) }')
+    return round(sum / len(args), 2)
 
 
-def ft_median(args: any) -> None:
+def ft_median(args: any) -> float:
     """ft_median() computes the median of an array of numbers"""
 
     sort = sorted(args)
@@ -21,7 +21,33 @@ def ft_median(args: any) -> None:
     else:
         mitm = round(sort[index], 2)
 
-    print(f'median: { mitm }')
+    return mitm
+
+
+def ft_quartiles(args: any) -> list[float]:
+    """ft_quartiles() computes the first and third quartiles \
+of an array of numbers"""
+    median = ft_median(args)
+    q1 = [entry for entry in sorted(args) if entry <= median]
+    q3 = [entry for entry in sorted(args) if entry >= median]
+    arr = [ft_median(q1), ft_median(q3)]
+    return arr
+
+
+def ft_variance(args: any) -> float:
+    """ft_variance() computes the variance of an array \
+of numbers"""
+    mean = ft_mean(args)
+    squared_dev = [pow(entry - mean, 2) for entry in sorted(args)]
+    return ft_mean(squared_dev)
+
+
+def ft_std(args: any) -> float:
+    """ft_std() computes the standard deviation of an \
+array of numbers"""
+
+    var = ft_variance(args)
+    return pow(var, 0.5)
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
@@ -37,10 +63,24 @@ and a series of commands and make the mean, median, quartile (25% and \
                 raise AssertionError("ERROR")
 
             if kwargs[k] == "mean":
-                ft_mean(args)
+                mean = ft_mean(args)
+                print(f'mean: { mean }')
 
             if kwargs[k] == "median":
-                ft_median(args)
+                mitm = ft_median(args)
+                print(f'median: { mitm }')
+
+            if kwargs[k] == "quartile":
+                quartiles = ft_quartiles(args)
+                print(f'quartiles: { quartiles }')
+
+            if kwargs[k] == "std":
+                std = ft_std(args)
+                print(f'std: { std }')
+
+            if kwargs[k] == "var":
+                var = ft_variance(args)
+                print(f'var: { var }')
 
     except Exception as error:
         print(f'{error}')
