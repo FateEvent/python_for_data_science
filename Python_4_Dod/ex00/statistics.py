@@ -56,11 +56,14 @@ and a series of commands and make the mean, median, quartile (25% and \
 75%), standard deviation and variance according to the commands."""
 
     try:
+        if len(args) <= 0 or len(args) <= 0:
+            raise ValueError("ERROR")
+
         for k in kwargs:
             if kwargs[k] != "mean" and kwargs[k] != "median" \
                 and kwargs[k] != "quartile" and kwargs[k] != "std" \
                     and kwargs[k] != "var":
-                raise AssertionError("ERROR")
+                raise ValueError("ERROR")
 
             if kwargs[k] == "mean":
                 mean = ft_mean(args)
