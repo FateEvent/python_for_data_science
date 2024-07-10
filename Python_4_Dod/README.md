@@ -33,5 +33,8 @@ If we say that, in our case, the __expected value__ is given by the arithmetic _
 
 ### Exercise 01
 
-In python it is possible to [return a function](https://www.geeksforgeeks.org/returning-a-function-from-a-function-python).
-What's also asked in the exercise, it is to have a variable inside the `outer()` function storing and updating the original value every time the `inner()` function is called.
+In the exercise it is asked to return an __inner function__ updating a variable contained in the __outer function__ every time it is called.
+
+To do that, we have to increase the `count` variable every time the function is called, and this may be done in the __inner function__ thanks to the [`nonlocal` keyword](https://realpython.com/inner-functions-what-are-they-good-for/#modifying-the-closure-state) that allows us to access a variable stored in the __outer function__.
+
+Without the `nonlocal` keyword, the only way to access it from the the __inner function__ is in the `return` statement.
