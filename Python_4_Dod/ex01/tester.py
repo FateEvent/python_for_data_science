@@ -11,3 +11,8 @@ another_counter = outer(1.5, pow)
 print(another_counter())
 print(another_counter())
 print(another_counter())
+
+a_third_one = outer(2, pow)
+print(a_third_one())
+print(a_third_one())
+print(a_third_one())

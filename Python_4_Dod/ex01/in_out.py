@@ -29,8 +29,13 @@ returns the result of the arguments calculation."""
         i = count
         res = x
         while i > 0:
-            res = function(res)
-            i -= 1
+            try:
+                res = function(res)
+                i -= 1
+            except Exception as error:
+                print(f'{type(error).__name__}: {error}')
+                return
+
         return res
 
     return inner

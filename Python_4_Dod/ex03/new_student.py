@@ -22,4 +22,3 @@ the hood"""
 
         self.login = self.name[0].lower() + self.surname[:7].lower()
         self.id = generate_id()
-        print(self.__dict__)

@@ -18,7 +18,12 @@ call limit has not been exceeded."""
 
             count += 1
             if count <= limit:
-                function()
+                try:
+                    function()
+                except Exception as error:
+                    print(f'{type(error).__name__}: {error}')
+                    return
+
             else:
                 print(f'Error: <function { function.__name__ } \
 at { hex(id(function)) }> \
