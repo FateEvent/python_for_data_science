@@ -26,8 +26,7 @@ def convert(value: str) -> float:
 def main():
     """The program calls the load() function, loads the file \
 population_total.csv, and displays the country information of your \
-campus and that of the campus of your choice.
-"""
+campus and that of the campus of your choice."""
 
     try:
         if len(sys.argv) > 2:

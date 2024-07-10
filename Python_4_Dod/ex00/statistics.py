@@ -1,5 +1,5 @@
 def ft_mean(args: any) -> float:
-    """ft_mean() computes the median of an array of numbers"""
+    """ft_mean() computes the median of an array of numbers."""
     sum = 0.0
     for entry in args:
         sum += float(entry)
@@ -8,7 +8,7 @@ def ft_mean(args: any) -> float:
 
 
 def ft_median(args: any) -> float:
-    """ft_median() computes the median of an array of numbers"""
+    """ft_median() computes the median of an array of numbers."""
 
     sort = sorted(args)
     length = len(sort)
@@ -26,7 +26,7 @@ def ft_median(args: any) -> float:
 
 def ft_quartiles(args: any) -> list[float]:
     """ft_quartiles() computes the first and third quartiles \
-of an array of numbers"""
+of an array of numbers."""
     median = ft_median(args)
     q1 = [entry for entry in sorted(args) if entry <= median]
     q3 = [entry for entry in sorted(args) if entry >= median]
@@ -36,7 +36,7 @@ of an array of numbers"""
 
 def ft_variance(args: any) -> float:
     """ft_variance() computes the variance of an array \
-of numbers"""
+of numbers."""
     mean = ft_mean(args)
     squared_dev = [pow(entry - mean, 2) for entry in sorted(args)]
     return ft_mean(squared_dev)
@@ -44,7 +44,7 @@ of numbers"""
 
 def ft_std(args: any) -> float:
     """ft_std() computes the standard deviation of an \
-array of numbers"""
+array of numbers."""
 
     var = ft_variance(args)
     return pow(var, 0.5)

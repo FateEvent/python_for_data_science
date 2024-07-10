@@ -1,12 +1,12 @@
 def square(x: int | float) -> int | float:
-    """square() squares a number"""
+    """square() squares a number."""
 
     return x**2
 
 
 def pow(x: int | float) -> int | float:
     """pow() computes the exponentiation of a \
-number raised to the power of itself"""
+number raised to the power of itself."""
 
     return x**x
 
