@@ -38,3 +38,16 @@ In the exercise it is asked to return an __inner function__ updating a variable 
 To do that, we have to increase the `count` variable every time the function is called, and this may be done in the __inner function__ thanks to the [`nonlocal` keyword](https://realpython.com/inner-functions-what-are-they-good-for/#modifying-the-closure-state) that allows us to access a variable stored in the __outer function__.
 
 Without the `nonlocal` keyword, the only way to access it from the the __inner function__ is in the `return` statement.
+
+### Exercise 02
+
+Exercise 02 introduces the concept of [wrappers](https://realpython.com/primer-on-python-decorators/#simple-decorators-in-python) and asks us to create a wrapper limiting the number of possible calls to a functions.
+
+When the number of calls gets over the limit, we are asked to print a message with the name and the location in memory of the function.
+To do this, I used respectively the `__name__` attribute to obtain the function name and the `id()` function to get its memory location in decimal numbers (converted to hexadecimal with the `hex()` function) as follows:
+
+```python
+    print(f'Error: <function { function.__name__ } \
+at { hex(id(function)) }> \
+called too many times')
+```
