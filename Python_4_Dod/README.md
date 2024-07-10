@@ -41,7 +41,7 @@ Without the `nonlocal` keyword, the only way to access it from the the __inner f
 
 ### Exercise 02
 
-Exercise 02 introduces the concept of [wrappers](https://realpython.com/primer-on-python-decorators/#simple-decorators-in-python) and asks us to create a wrapper limiting the number of possible calls to a functions.
+This exercise introduces the concept of [wrappers](https://realpython.com/primer-on-python-decorators/#returning-values-from-decorated-functions) and asks us to create a wrapper limiting the number of possible calls to a functions.
 
 When the number of calls gets over the limit, we are asked to print a message with the name and the location in memory of the function.
 To do this, I used respectively the `__name__` attribute to obtain the function name and the `id()` function to get its memory location in decimal numbers (converted to hexadecimal with the `hex()` function) as follows:
@@ -50,4 +50,31 @@ To do this, I used respectively the `__name__` attribute to obtain the function 
     print(f'Error: <function { function.__name__ } \
 at { hex(id(function)) }> \
 called too many times')
+```
+### Exercise 03
+
+This exercise introduces [__data classes__](https://realpython.com/python-data-classes), a kind of class that simplifies the creation and management of the class.
+
+In __data classes__, indicated by the use of the decorator `@dataclass`, the initialisation syntax is simplified in comparison to normal classes in Python, the `__init__` function being called under the hood.
+
+The [`__post_init__` function](https://docs.python.org/3/library/dataclasses.html#post-init-processing), which is called after the `__init__` function, is used to [add attributes to a data class object after the initialization](https://stackoverflow.com/a/68440028). In addition, it allows the use of the `self` keyword allowing access to the constructor parameters. However, the `__repr__` attribute won't display the added attributes added in this way.
+
+This is the trickiest part. And that's where the `field()` method becomes useful.
+
+The [`field()`](https://docs.python.org/3/library/dataclasses.html#dataclasses.field) method is used, among other things, to initialise attributes with a default value.
+For this, we will need the `default` keyword (or the `default_factory` keyword if we want to use a function to initialise ourr values):
+
+```python
+@dataclass
+class Student:
+    <SNIP>
+    active: bool = field(default=True)
+```
+Another useful keyword is `init`. It allows developers to make initialisation impossible to users:
+
+```python
+@dataclass
+class Student:
+    <SNIP>
+    login: str = field(init=False)
 ```
