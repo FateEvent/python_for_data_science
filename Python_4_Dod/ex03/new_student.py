@@ -20,5 +20,11 @@ class Student:
         """Function called after call to __init__() under \
 the hood"""
 
-        self.login = self.name[0].lower() + self.surname[:7].lower()
+        str_name = self.name.lower()
+        try:
+            str_name = str_name[0]
+        except Exception as error:
+            print(f'{type(error).__name__}: {error}')
+
+        self.login = str_name + self.surname[:7].lower()
         self.id = generate_id()
