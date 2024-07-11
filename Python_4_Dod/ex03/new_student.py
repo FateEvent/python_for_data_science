@@ -20,8 +20,8 @@ class Student:
         """Function called after call to __init__() under \
 the hood"""
 
-        str_name = self.name.lower()
+        str_name = str(self.name).lower()
         if str_name:
             str_name = str_name[0]
-        self.login = str_name + self.surname[:7].lower()
+        self.login = str_name + str(self.surname)[:7].lower()
         self.id = generate_id()
