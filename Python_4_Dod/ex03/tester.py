@@ -6,8 +6,8 @@ print(student)
 student = Student(name="Fabio", surname="Venturini")
 print(student)
 
-# student = Student(name="Chris", surname="Dupuis", id="ahgsjdkakskdskhjh")
-# print(student)
+student = Student(name="Chris", surname="Dupuis", id="ahgsjdkakskdskhjh")
+print(student)
 
-student = Student(name="", surname="Dupuis")
+student = Student(name="", surname="")
 print(student)

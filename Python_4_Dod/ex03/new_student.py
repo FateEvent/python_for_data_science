@@ -21,10 +21,7 @@ class Student:
 the hood"""
 
         str_name = self.name.lower()
-        try:
+        if str_name:
             str_name = str_name[0]
-        except Exception as error:
-            print(f'{type(error).__name__}: {error}')
-
         self.login = str_name + self.surname[:7].lower()
         self.id = generate_id()

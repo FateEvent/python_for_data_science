@@ -1,6 +1,7 @@
 from statistics import ft_statistics
 
 ft_statistics(1, 42, 360, 11, 64, toto="mean", tutu="median", tata="quartile")
+print("-----")
 ft_statistics(1, 11, 39, 42, 64, 360, toto="mean", tutu="median",
               tata="quartile")
 print("-----")
