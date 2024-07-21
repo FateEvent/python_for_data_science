@@ -26,7 +26,7 @@ def main():
         print(type(args))
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        return 1
 
     try:
         args = ft_filter(None, ["0", "", "la mamma", "va lontano", "a fare",
@@ -35,7 +35,7 @@ def main():
         print(type(args))
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        return 1
 
     try:
         args = ft_filter(lambda w: len(w) > 5, ["0", "", "la mamma",
@@ -45,7 +45,7 @@ def main():
         print(type(args))
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        return 1
 
     return 0
 

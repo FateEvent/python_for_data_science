@@ -85,7 +85,7 @@ Morse Code."""
 
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        return 1
 
     print(main.__doc__)
     return 0

@@ -63,7 +63,7 @@ def main():
 
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        return 1
 
     return 0
 

@@ -21,8 +21,12 @@ gross national product of the year of your choice for each country."""
         prefix = "../material/"
         path = "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
 
-        df_income = load(prefix + path)
-        df_life = load("../material/life_expectancy_years.csv")
+        try:
+            df_income = load(prefix + path)
+            df_life = load("../material/life_expectancy_years.csv")
+        except Exception:
+            print('One or more databases could not be retrieved.')
+            return 1
 
         df_income = df_income[chosen_year]
         df_life = df_life[chosen_year]

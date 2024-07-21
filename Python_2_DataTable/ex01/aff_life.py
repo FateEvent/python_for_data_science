@@ -18,7 +18,11 @@ the country of your choice."""
         else:
             chosen_country = sys.argv[1].strip()
 
-        df = load("../material/life_expectancy_years.csv")
+        try:
+            df = load("../material/life_expectancy_years.csv")
+        except Exception:
+            print('The database could not be retrieved.')
+            return 1
 
         df_chosen_country = df[df["country"] == chosen_country]
 

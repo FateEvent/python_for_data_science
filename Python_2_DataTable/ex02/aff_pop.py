@@ -37,7 +37,11 @@ campus and that of the campus of your choice."""
         else:
             chosen_country = sys.argv[1].strip()
 
-        df = load("../material/population_total.csv")
+        try:
+            df = load("../material/population_total.csv")
+        except Exception:
+            print('The database could not be retrieved.')
+            return 1
 
         df_france = df[df["country"] == "France"]
         df_chosen_country = df[df["country"] == chosen_country]

@@ -79,21 +79,21 @@ and lower-case characters, punctuation marks, digits and spaces."""
                 text = prompt_a_prompt()
             except Exception as error:
                 print(f'{type(error).__name__}: {error}')
-                exit()
+                exit(1)
         else:
             try:
                 text = sys.argv[1]
             except Exception as error:
                 print(f'{type(error).__name__}: {error}')
-                exit()
+                exit(1)
         try:
             analyze_entry(text)
         except Exception as error:
             print(f'{type(error).__name__}: {error}')
-            exit()
+            exit(1)
     except Exception as error:
         print(f'{type(error).__name__}: {error}')
-        exit()
+        exit(1)
 
 
 def main():
