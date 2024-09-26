@@ -18,17 +18,21 @@ Among the [available class decorators](https://diveintopython.org/learn/classes/
 
 ### Properties
 
-To understand how to create getters and setters I followed the leads of [this article](https://www.pythontutorial.net/python-oop/python-property-decorator). It's important to pay attention to add underscore (`_`) to the attribute in order to distinguish it from the getter and setter methods, otherwise the function will recursively call itself.
+To understand how to create getters and setters I followed the leads of [this article](https://www.pythontutorial.net/python-oop/python-property-decorator). It's important to pay attention to add underscore (`_`) to the attribute or the method name in order to distinguish them, otherwise the function will recursively call itself.
 
 ```python
-	def __init__(self, first_name, is_alive=True):
-        self.first_name = first_name
-        self._is_alive = is_alive
-
 	@property
-    def is_alive(self):
-        return self._is_alive
+    def _eyes(self):
+        """A getter for the eyes attribute"""
+        return self.eyes
+
+    @_eyes.setter
+    def _eyes(self, eye_colour):
+        """A setter for the eyes attribute"""
+        self.eyes = eye_colour
 ```
+In this way, the attribute name preceded by an underscore will mask the original attribute name.
+
 ### Multiple Inheritance, and the Diamond Problem
 
 In Python the [diamond problem](https://www.datacamp.com/tutorial/super-multiple-inheritance-diamond-problem) is automatically managed.
